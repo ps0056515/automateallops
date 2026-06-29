@@ -78,13 +78,13 @@ export const enterpriseSections: RichSection[] = [
     ],
   },
   {
-    title: 'Pricing & procurement',
+    title: 'Procurement',
     body: 'Seat-based annual contracts with volume discounts. Invoice billing, PO support, and MSAs reviewed by your legal team. Most enterprises start with a 90-day pilot (25–50 seats) before org-wide rollout.',
     items: [
       'Starter Enterprise: 25–99 seats',
       'Growth Enterprise: 100–999 seats',
       'Global Enterprise: 1,000+ seats with custom SLA',
-      'Academic and bootcamp pricing available',
+      'Academic and bootcamp plans available',
     ],
   },
 ];

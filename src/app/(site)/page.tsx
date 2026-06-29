@@ -4,7 +4,6 @@ import WhoItsFor from '@/components/WhoItsFor';
 import BenchTeams from '@/components/BenchTeams';
 import ProjectDelivery from '@/components/ProjectDelivery';
 import ProofHub from '@/components/ProofHub';
-import PricingTeaser from '@/components/PricingTeaser';
 import InsightsSection from '@/components/InsightsSection';
 import CTA from '@/components/CTA';
 
@@ -19,7 +18,6 @@ export default function HomePage() {
       </div>
       <ProjectDelivery />
       <ProofHub />
-      <PricingTeaser />
       <InsightsSection />
       <CTA />
     </>

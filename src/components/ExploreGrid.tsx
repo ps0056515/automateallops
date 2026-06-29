@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight, BookOpen, Terminal, Shield, Wrench, Users, CreditCard, BarChart3, Rocket, Cloud, Building2 } from 'lucide-react';
+import { ArrowRight, BookOpen, Terminal, Shield, Wrench, Users, BarChart3, Rocket, Cloud, Building2 } from 'lucide-react';
 import { sections } from '@/lib/navigation';
 import BrandWordmark from '@/components/BrandWordmark';
 
@@ -68,13 +68,6 @@ const exploreItems = [
     href: sections.enterprise,
     icon: Building2,
     color: 'from-indigo-500 to-blue-600',
-  },
-  {
-    title: 'Pricing',
-    description: 'Start free. Upgrade when you are ready to go unlimited.',
-    href: sections.pricing,
-    icon: CreditCard,
-    color: 'from-cyan-500 to-violet-600',
   },
 ];
 

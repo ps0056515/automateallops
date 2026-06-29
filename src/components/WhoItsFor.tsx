@@ -37,7 +37,7 @@ const segments = [
 const industries = [
   { icon: Landmark, label: 'FinTech', desc: 'PCI-aware pipelines, zero-downtime migrations', href: '/outcomes/fintech-platform-team' },
   { icon: Layers, label: 'B2B SaaS', desc: 'Multi-tenant K8s, GitOps, release velocity', href: '/outcomes/saas-sre-transformation' },
-  { icon: HeartPulse, label: 'HealthTech', desc: 'HIPAA-ready infra, audit trails, on-call', href: sections.contactProjects },
+  { icon: HeartPulse, label: 'HealthTech', desc: 'HIPAA-ready infra, audit trails, on-call', href: '/outcomes/healthtech-hipaa-platform' },
   { icon: ShoppingCart, label: 'E-commerce', desc: 'Peak-traffic scaling, CI/CD rescue, SLOs', href: '/outcomes/ci-cd-rescue' },
   { icon: Building2, label: 'Enterprise', desc: 'Multi-region rollouts, landing zones, IDP', href: '/outcomes/global-enterprise-rollout' },
 ];

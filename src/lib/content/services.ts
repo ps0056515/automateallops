@@ -41,7 +41,7 @@ export const serviceOfferings: ServiceOffering[] = [
 
 export const deliveryModel = [
   { step: 'Discovery call', timeAnchor: 'Day 1', detail: '30-minute scoping call — stack, timeline, success criteria. No sales deck, just engineers on the call from minute one.' },
-  { step: 'Proposal in your inbox', timeAnchor: 'Day 3', detail: 'Fixed-scope sprint or time-and-materials team — you choose. Clear deliverables, pricing, and weekly demo cadence.' },
+  { step: 'Proposal in your inbox', timeAnchor: 'Day 3', detail: 'Fixed-scope sprint or time-and-materials team — you choose. Clear deliverables, scope, and weekly demo cadence.' },
   { step: 'Engineers in your Slack', timeAnchor: 'Week 2', detail: 'Senior engineers own the work. Daily async updates, PRs in your repos, standups on your schedule.' },
   { step: 'You own it forever', timeAnchor: 'Week 6', detail: 'Runbooks, architecture diagrams, and recorded walkthroughs handed off. Optional retainer if you want us to stay.' },
 ];

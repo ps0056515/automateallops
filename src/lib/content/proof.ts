@@ -146,6 +146,25 @@ export const caseStudies: CaseStudy[] = [
     },
   },
   {
+    slug: 'healthtech-hipaa-platform',
+    company: 'HealthFlow',
+    industry: 'HealthTech',
+    logo: 'HF',
+    headline: 'HIPAA-ready EKS platform with audit trails — production in 6 weeks',
+    challenge: 'HealthFlow needed HIPAA-aligned infrastructure for patient data workloads. Their team had no Kubernetes depth and audit requirements blocked a self-serve deploy model.',
+    solution: 'AutomateAllOps delivered an EKS landing zone with encryption at rest, VPC segmentation, centralized logging, on-call runbooks, and SOC 2-ready change controls — with full handoff documentation.',
+    results: [
+      { metric: '6 weeks', label: 'Platform go-live' },
+      { metric: '100%', label: 'Audit trail coverage on deploys' },
+      { metric: '24/7', label: 'On-call coverage from week one' },
+    ],
+    quote: {
+      text: 'They understood compliance wasn\'t optional. We got production-ready infra with runbooks our team could operate — not a black box we\'d depend on forever.',
+      author: 'Dr. Priya Nair',
+      role: 'CTO, HealthFlow',
+    },
+  },
+  {
     slug: 'global-enterprise-rollout',
     company: 'Meridian Global',
     industry: 'Enterprise software',

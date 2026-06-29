@@ -1,14 +1,16 @@
 'use client';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight, CalendarDays, Play } from 'lucide-react';
+import { ArrowRight, CalendarDays, Sparkles } from 'lucide-react';
 import { sections } from '@/lib/navigation';
 import { featuredCaseStudyCta } from '@/lib/content/clients';
 import HeroBenchDemo from '@/components/HeroBenchDemo';
+import BenchTour from '@/components/BenchTour';
 
 export default function Hero() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [tourOpen, setTourOpen] = useState(false);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -99,13 +101,17 @@ export default function Hero() {
                   Book a discovery call
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                 </a>
-                <Link
-                  href="#bench-demo"
-                  className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl border border-white/10 text-white font-semibold hover:border-cyan-500/30 hover:bg-white/[0.03] transition-all"
+                <button
+                  type="button"
+                  onClick={() => setTourOpen(true)}
+                  className="group relative inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl font-semibold text-white overflow-hidden transition-all"
                 >
-                  <Play className="w-4 h-4 text-cyan-400" />
-                  Try the bench tour
-                </Link>
+                  <span className="absolute inset-0 rounded-xl bg-gradient-to-r from-cyan-500/20 via-violet-600/20 to-cyan-500/20 opacity-80 group-hover:opacity-100 transition-opacity" />
+                  <span className="absolute inset-0 rounded-xl border border-cyan-500/40 group-hover:border-cyan-400/60 transition-colors" />
+                  <span className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 bg-[radial-gradient(circle_at_50%_0%,rgba(34,211,238,0.15),transparent_70%)] transition-opacity" />
+                  <Sparkles className="relative w-4 h-4 text-cyan-400 group-hover:animate-pulse" />
+                  <span className="relative">Try the bench tour</span>
+                </button>
               </div>
 
               <Link
@@ -136,6 +142,7 @@ export default function Hero() {
           </div>
         </div>
       </div>
+      <BenchTour open={tourOpen} onClose={() => setTourOpen(false)} />
     </section>
   );
 }

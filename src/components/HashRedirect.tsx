@@ -11,7 +11,7 @@ const HASH_ROUTES: Record<string, string> = {
   cloud: '/cloud',
   'sre-hub': '/sre-hub',
   community: '/community',
-  pricing: '/pricing',
+  pricing: '/services',
   'get-started': '/get-started',
   newsletter: '/newsletter',
   'cloud-hub': '/cloud',
