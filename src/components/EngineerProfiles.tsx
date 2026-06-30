@@ -1,8 +1,8 @@
 'use client';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Award, MapPin, CheckCircle } from 'lucide-react';
-import { benchEngineers } from '@/lib/content/engineers';
+import { Award, MapPin, CheckCircle, ExternalLink } from 'lucide-react';
+import { benchEngineers, engineerDisclaimer } from '@/lib/content/engineers';
 import { sections } from '@/lib/navigation';
 
 const availabilityColor: Record<string, string> = {
@@ -25,27 +25,27 @@ export default function EngineerProfiles() {
           className="text-center mb-12"
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-sm mb-4">
-            Transparent bench profiles
+            Bench lead profiles
           </div>
           <h2 className="text-4xl sm:text-5xl font-black text-white mb-4">
             Meet the engineers{' '}
             <span className="gradient-text">on standby</span>
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            Real profiles, real availability — bench-trained engineers. You know who deploys before you sign.
+            Full profiles with verified credentials. LinkedIn links included — you know who deploys before you sign.
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
           {benchEngineers.map((eng, i) => (
             <motion.div
               key={eng.id}
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: i * 0.06 }}
-              className="glass rounded-2xl p-6 border border-white/10 hover:border-cyan-500/25 transition-all"
+              className="glass rounded-2xl p-6 border border-white/10 hover:border-cyan-500/25 transition-all flex flex-col"
             >
-              <div className="flex items-start gap-4 mb-4">
+              <div className="flex items-start gap-4 mb-3">
                 <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500 to-violet-600 flex items-center justify-center text-white font-bold text-lg shrink-0">
                   {eng.name.split(' ').map((n) => n[0]).join('')}
                 </div>
@@ -56,7 +56,9 @@ export default function EngineerProfiles() {
                 </div>
               </div>
 
-              <div className={`inline-flex text-xs font-semibold px-2.5 py-1 rounded-full border mb-4 ${availabilityColor[eng.availability]}`}>
+              <p className="text-slate-500 text-xs leading-relaxed mb-4">{eng.bio}</p>
+
+              <div className={`inline-flex text-xs font-semibold px-2.5 py-1 rounded-full border mb-4 w-fit ${availabilityColor[eng.availability]}`}>
                 {eng.availability}
               </div>
 
@@ -79,7 +81,7 @@ export default function EngineerProfiles() {
                 ))}
               </div>
 
-              <ul className="space-y-1">
+              <ul className="space-y-1 mb-4 flex-1">
                 {eng.specialties.map((s) => (
                   <li key={s} className="text-xs text-slate-400 flex gap-1.5">
                     <CheckCircle className="w-3 h-3 text-cyan-400 shrink-0 mt-0.5" />
@@ -87,6 +89,16 @@ export default function EngineerProfiles() {
                   </li>
                 ))}
               </ul>
+
+              <a
+                href={eng.linkedIn}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 py-2.5 rounded-lg border border-white/10 text-slate-300 text-xs font-semibold hover:border-cyan-500/30 hover:text-cyan-400 transition-all mt-auto"
+              >
+                <ExternalLink className="w-3.5 h-3.5" />
+                View LinkedIn profile
+              </a>
             </motion.div>
           ))}
         </div>
@@ -98,7 +110,7 @@ export default function EngineerProfiles() {
           >
             Request squad match →
           </a>
-          <p className="text-slate-600 text-xs mt-3">Profiles shown are representative bench leads — full roster shared on discovery call</p>
+          <p className="text-slate-600 text-xs mt-3 max-w-lg mx-auto">{engineerDisclaimer}</p>
         </div>
       </div>
     </section>

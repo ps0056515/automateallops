@@ -65,7 +65,10 @@ export default function HeroBenchDemo() {
 
   return (
     <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-black/50 bg-[#0a0f1e] theme-dark-panel">
-      <div className="px-4 py-3 border-b border-white/5 flex items-center justify-between bg-[#060b18]">
+        <div className="px-4 py-2 border-b border-white/5 bg-[#060b18]/80 flex items-center justify-between">
+          <span className="text-[10px] text-slate-500">Interactive widget · simulated matching</span>
+        </div>
+        <div className="px-4 py-3 border-b border-white/5 flex items-center justify-between bg-[#060b18]">
         <div className="flex items-center gap-2">
           <Terminal className="w-4 h-4 text-cyan-400" />
           <span className="text-xs text-slate-400 font-mono">bench.automateallops.com</span>
@@ -81,9 +84,9 @@ export default function HeroBenchDemo() {
               {i + 1}. {s}
             </span>
           ))}
-          <span className="flex items-center gap-1.5 text-[10px] text-emerald-400 font-semibold">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            Live
+          <span className="flex items-center gap-1.5 text-[10px] text-amber-400/90 font-semibold">
+            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+            Demo
           </span>
         </div>
       </div>
@@ -161,7 +164,7 @@ export default function HeroBenchDemo() {
                 className="text-center py-4 px-4 rounded-xl bg-emerald-500/10 border border-emerald-500/25"
               >
                 <div className="text-emerald-400 font-display font-bold text-sm mb-1">Squad matched</div>
-                <div className="text-slate-400 text-xs">Book a call to lock your deploy date</div>
+                <div className="text-slate-400 text-xs">Simulation complete — book a call to deploy for real</div>
               </motion.div>
             ) : (
               <button
@@ -170,7 +173,7 @@ export default function HeroBenchDemo() {
                 disabled={step > 0 && step < 3}
                 className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-violet-600 text-white font-bold text-sm hover:shadow-lg hover:shadow-cyan-500/20 transition-all disabled:opacity-60"
               >
-                {step === 0 && (<><Play className="w-4 h-4" /> Preview squad deploy</>)}
+                {step === 0 && (<><Play className="w-4 h-4" /> Simulate bench matching</>)}
                 {step === 1 && 'Matching engineers on bench…'}
                 {step === 2 && 'Assigning squad leads…'}
               </button>
@@ -182,7 +185,7 @@ export default function HeroBenchDemo() {
           href={sections.contactProjects}
           className="mt-4 flex items-center justify-center gap-1 text-xs text-cyan-400 hover:text-cyan-300 font-semibold"
         >
-          Deploy for real <ArrowRight className="w-3 h-3" />
+          Book a real discovery call <ArrowRight className="w-3 h-3" />
         </a>
       </div>
     </div>

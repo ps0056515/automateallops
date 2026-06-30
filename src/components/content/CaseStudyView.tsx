@@ -1,11 +1,18 @@
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Shield } from 'lucide-react';
 import type { CaseStudy } from '@/lib/content/proof';
+import { anonymizationNote } from '@/lib/content/clients';
 import { sections } from '@/lib/navigation';
 
 export default function CaseStudyView({ study }: { study: CaseStudy }) {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-10">
+      {study.anonymized && (
+        <div className="flex items-start gap-3 glass rounded-xl p-4 border border-amber-500/20 text-sm text-slate-400">
+          <Shield className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+          {anonymizationNote}
+        </div>
+      )}
       <div className="flex items-center gap-4">
         <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500 to-violet-600 flex items-center justify-center text-white font-bold text-lg">
           {study.logo}
@@ -47,11 +54,8 @@ export default function CaseStudyView({ study }: { study: CaseStudy }) {
       </blockquote>
 
       <div className="flex flex-wrap gap-4 pt-4">
-        <Link href={sections.enterprise} className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 font-semibold">
-          Enterprise solutions <ArrowRight className="w-4 h-4" />
-        </Link>
-        <Link href={sections.getStarted} className="inline-flex items-center gap-2 text-slate-400 hover:text-white font-semibold">
-          Start free trial <ArrowRight className="w-4 h-4" />
+        <Link href={sections.contactProjects} className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 font-semibold">
+          Book a discovery call <ArrowRight className="w-4 h-4" />
         </Link>
       </div>
     </div>

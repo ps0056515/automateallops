@@ -1,15 +1,13 @@
 import Link from 'next/link';
-import { Target, GitBranch, AtSign, Users, CirclePlay, Rss } from 'lucide-react';
+import { Target, Users, Rss, Mail } from 'lucide-react';
 import { footerLinks, sections, socialLinks } from '@/lib/navigation';
 import ThemeToggle from '@/components/ThemeToggle';
 import BrandWordmark from '@/components/BrandWordmark';
 
 const socialIcons = {
-  GitHub: GitBranch,
-  Twitter: AtSign,
-  LinkedIn: Users,
-  YouTube: CirclePlay,
   Blog: Rss,
+  LinkedIn: Users,
+  Newsletter: Mail,
 } as const;
 
 export default function Footer() {
@@ -29,15 +27,15 @@ export default function Footer() {
             </p>
             <div className="flex gap-3">
               {socialLinks.map(({ label, href }) => {
-                const Icon = socialIcons[label];
-                return (
-                  <Link
-                    key={label}
-                    href={href}
-                    prefetch={false}
-                    className="w-8 h-8 glass rounded-lg flex items-center justify-center text-slate-500 hover:text-cyan-400 hover:border-cyan-500/40 transition-all"
-                    aria-label={label}
-                  >
+                const Icon = socialIcons[label as keyof typeof socialIcons];
+                const isExternal = href.startsWith('http');
+                const className = 'w-8 h-8 glass rounded-lg flex items-center justify-center text-slate-500 hover:text-cyan-400 hover:border-cyan-500/40 transition-all';
+                return isExternal ? (
+                  <a key={label} href={href} target="_blank" rel="noopener noreferrer" className={className} aria-label={label}>
+                    <Icon className="w-4 h-4" />
+                  </a>
+                ) : (
+                  <Link key={label} href={href} prefetch={false} className={className} aria-label={label}>
                     <Icon className="w-4 h-4" />
                   </Link>
                 );

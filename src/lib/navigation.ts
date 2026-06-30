@@ -157,15 +157,11 @@ export const footerLinks: Record<string, { label: string; href: string }[]> = {
     { label: 'Chaos Labs', href: sreHref('chaos-engineering') },
     { label: 'Postmortems', href: sreHref('postmortem-library') },
     { label: 'On-Call Guide', href: sreHref('on-call-excellence') },
-    { label: 'Runbooks', href: sreHref('incident-playbooks') },
   ],
   Community: [
-    { label: 'Discord', href: communityHref('discord') },
-    { label: 'Forum', href: communityHref('forum') },
-    { label: 'Events', href: communityHref('events') },
+    { label: 'Community Hub', href: sections.community },
     { label: 'Blog', href: sections.blog },
     { label: 'Newsletter', href: sections.newsletter },
-    { label: 'Podcast', href: communityHref('podcast') },
   ],
   Company: [
     { label: 'DevOps & SRE Projects', href: sections.services },
@@ -182,9 +178,7 @@ export const footerLinks: Record<string, { label: string; href: string }[]> = {
 };
 
 export const socialLinks = [
-  { label: 'GitHub', href: sections.labs },
-  { label: 'Twitter', href: communityHref('discord') },
-  { label: 'LinkedIn', href: sections.about },
-  { label: 'YouTube', href: sections.demo },
   { label: 'Blog', href: sections.blog },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/automateallops' },
+  { label: 'Newsletter', href: sections.newsletter },
 ] as const;

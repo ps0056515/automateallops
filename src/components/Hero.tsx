@@ -104,13 +104,16 @@ export default function Hero() {
                 <button
                   type="button"
                   onClick={() => setTourOpen(true)}
-                  className="group relative inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl font-semibold text-white overflow-hidden transition-all"
+                  aria-label="Open interactive bench tour demo"
+                  className="group relative inline-flex flex-col items-center justify-center gap-0.5 px-7 py-3.5 rounded-xl font-semibold text-white overflow-hidden transition-all"
                 >
                   <span className="absolute inset-0 rounded-xl bg-gradient-to-r from-cyan-500/20 via-violet-600/20 to-cyan-500/20 opacity-80 group-hover:opacity-100 transition-opacity" />
                   <span className="absolute inset-0 rounded-xl border border-cyan-500/40 group-hover:border-cyan-400/60 transition-colors" />
-                  <span className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 bg-[radial-gradient(circle_at_50%_0%,rgba(34,211,238,0.15),transparent_70%)] transition-opacity" />
-                  <Sparkles className="relative w-4 h-4 text-cyan-400 group-hover:animate-pulse" />
-                  <span className="relative">Try the bench tour</span>
+                  <span className="relative inline-flex items-center gap-2">
+                    <Sparkles className="w-4 h-4 text-cyan-400 group-hover:animate-pulse" />
+                    Interactive demo
+                  </span>
+                  <span className="relative text-[10px] text-slate-400 font-normal">Simulated bench tour · 60 sec · no signup</span>
                 </button>
               </div>
 
@@ -119,7 +122,7 @@ export default function Hero() {
                 className="group inline-flex items-start gap-4 p-4 rounded-xl bento-card max-w-md hover:border-cyan-500/25 transition-all"
               >
                 <div className="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center shrink-0">
-                  <span className="font-display text-xs font-bold text-cyan-400">NP</span>
+                  <span className="font-display text-xs font-bold text-cyan-400">{featuredCaseStudyCta.abbr}</span>
                 </div>
                 <div>
                   <div className="text-white text-sm font-semibold group-hover:text-cyan-300 transition-colors">

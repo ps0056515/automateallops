@@ -14,6 +14,8 @@ export type CaseStudy = {
   solution: string;
   results: { metric: string; label: string }[];
   quote: { text: string; author: string; role: string };
+  /** Client identity withheld — shown on case study pages */
+  anonymized?: boolean;
 };
 
 export type CertPassRate = {
@@ -43,6 +45,14 @@ export const proofMetrics: ProofMetric[] = [
   { value: '87%', label: 'Career advancement', detail: 'Reported promotion or role change within 12 months' },
   { value: '40%', label: 'Faster onboarding', detail: 'Enterprise teams vs. traditional shadowing programs' },
   { value: '4.9/5', label: 'Platform rating', detail: 'Based on 12,000+ verified learner reviews' },
+];
+
+/** Condensed strip for the /outcomes page — delivery-first, four headline numbers */
+export const outcomesPageMetrics: ProofMetric[] = [
+  { value: '200+', label: 'Projects delivered', detail: 'Kubernetes, CI/CD, Terraform, SRE, and cloud migrations' },
+  { value: '97%', label: 'On-time delivery', detail: 'Completed within agreed scope and timeline' },
+  { value: '6 wks', label: 'Avg. engagement', detail: 'From scoping call to production handoff' },
+  { value: '94%', label: 'CKA pass rate', detail: 'Among members who complete the full prep track' },
 ];
 
 export const certPassRates: CertPassRate[] = [
@@ -90,11 +100,12 @@ export const certPassRates: CertPassRate[] = [
 export const caseStudies: CaseStudy[] = [
   {
     slug: 'fintech-platform-team',
-    company: 'NovaPay',
+    company: 'Series B Fintech',
     industry: 'Fintech',
-    logo: 'NP',
+    logo: 'SF',
+    anonymized: true,
     headline: 'EKS migration completed in 5 weeks — team owned it from day one',
-    challenge: 'NovaPay needed to migrate a 40-service platform from EC2 to EKS without disrupting payments processing. Internal team lacked Kubernetes depth.',
+    challenge: 'A Series B payments company needed to migrate a 40-service platform from EC2 to EKS without disrupting payments processing. Their internal team lacked Kubernetes depth.',
     solution: 'AutomateAllOps embedded two senior engineers for 5 weeks — cluster design, GitOps setup with ArgoCD, service mesh, and full handoff documentation.',
     results: [
       { metric: '5 weeks', label: 'EC2 → EKS migration' },
@@ -103,17 +114,18 @@ export const caseStudies: CaseStudy[] = [
     ],
     quote: {
       text: 'AutomateAllOps engineers wrote code in our repos, attended our standups, and left us with runbooks we actually use. That\'s different from every other vendor we\'ve used.',
-      author: 'Elena Vasquez',
-      role: 'Director of Platform Engineering, NovaPay',
+      author: 'Director of Platform Engineering',
+      role: 'Series B Fintech · US',
     },
   },
   {
     slug: 'saas-sre-transformation',
-    company: 'CloudStack',
+    company: 'Mid-market B2B SaaS',
     industry: 'B2B SaaS',
-    logo: 'CS',
+    logo: 'BS',
+    anonymized: true,
     headline: 'SRE program built from zero — 73% fewer repeat incidents in 6 months',
-    challenge: 'CloudStack had no SRE function. Alert noise was constant, postmortems were rare, and engineering morale was suffering from repeated on-call burnout.',
+    challenge: 'A 150-person B2B SaaS company had no SRE function. Alert noise was constant, postmortems were rare, and engineering morale was suffering from repeated on-call burnout.',
     solution: 'AutomateAllOps designed and implemented SLOs, built Prometheus/Grafana observability, established incident response processes, and trained 6 engineers through the transition.',
     results: [
       { metric: '73%', label: 'Reduction in repeat incidents' },
@@ -122,17 +134,18 @@ export const caseStudies: CaseStudy[] = [
     ],
     quote: {
       text: 'The postmortem culture change alone was worth it. AutomateAllOps gave us vocabulary and muscle memory before our first real SEV-1.',
-      author: 'James Okonkwo',
-      role: 'Head of SRE, CloudStack',
+      author: 'Head of SRE',
+      role: 'Mid-market B2B SaaS · EU',
     },
   },
   {
     slug: 'ci-cd-rescue',
-    company: 'Vantage Commerce',
+    company: 'E-commerce Scale-up',
     industry: 'E-commerce',
-    logo: 'VC',
+    logo: 'EC',
+    anonymized: true,
     headline: 'Broken CI/CD pipeline fixed and replaced in 3 weeks — deploy time cut 80%',
-    challenge: 'Vantage\'s Jenkins setup had grown unmaintainable. Deploys took 45 minutes, broke constantly, and blocked the 30-person eng team every other day.',
+    challenge: 'An e-commerce scale-up\'s Jenkins setup had grown unmaintainable. Deploys took 45 minutes, broke constantly, and blocked their 30-person eng team every other day.',
     solution: 'AutomateAllOps replaced Jenkins with GitHub Actions, introduced Docker layer caching, parallel test execution, and blue-green deployments to ECS.',
     results: [
       { metric: '9 min', label: 'Deploy time (was 45 min)' },
@@ -141,17 +154,18 @@ export const caseStudies: CaseStudy[] = [
     ],
     quote: {
       text: 'We were losing days every week to pipeline fires. AutomateAllOps fixed it and built something we can actually own. Engineers are happier.',
-      author: 'Marcus Webb',
-      role: 'VP Engineering, Vantage Commerce',
+      author: 'VP Engineering',
+      role: 'E-commerce Scale-up · US',
     },
   },
   {
     slug: 'healthtech-hipaa-platform',
-    company: 'HealthFlow',
+    company: 'HealthTech Startup',
     industry: 'HealthTech',
-    logo: 'HF',
+    logo: 'HT',
+    anonymized: true,
     headline: 'HIPAA-ready EKS platform with audit trails — production in 6 weeks',
-    challenge: 'HealthFlow needed HIPAA-aligned infrastructure for patient data workloads. Their team had no Kubernetes depth and audit requirements blocked a self-serve deploy model.',
+    challenge: 'A HealthTech startup needed HIPAA-aligned infrastructure for patient data workloads. Their team had no Kubernetes depth and audit requirements blocked a self-serve deploy model.',
     solution: 'AutomateAllOps delivered an EKS landing zone with encryption at rest, VPC segmentation, centralized logging, on-call runbooks, and SOC 2-ready change controls — with full handoff documentation.',
     results: [
       { metric: '6 weeks', label: 'Platform go-live' },
@@ -160,17 +174,18 @@ export const caseStudies: CaseStudy[] = [
     ],
     quote: {
       text: 'They understood compliance wasn\'t optional. We got production-ready infra with runbooks our team could operate — not a black box we\'d depend on forever.',
-      author: 'Dr. Priya Nair',
-      role: 'CTO, HealthFlow',
+      author: 'CTO',
+      role: 'HealthTech Startup · US',
     },
   },
   {
     slug: 'global-enterprise-rollout',
-    company: 'Meridian Global',
+    company: 'Global Enterprise Software',
     industry: 'Enterprise software',
-    logo: 'MG',
+    logo: 'GE',
+    anonymized: true,
     headline: 'Multi-cloud Terraform landing zone deployed across 8 regions in 8 weeks',
-    challenge: 'Meridian needed a standardised multi-account AWS/GCP setup with network segmentation, SSO, and policy guardrails across 8 regional offices.',
+    challenge: 'A global enterprise software company needed a standardised multi-account AWS/GCP setup with network segmentation, SSO, and policy guardrails across 8 regional offices.',
     solution: 'AutomateAllOps designed and delivered a Terraform module library, Control Tower landing zone, Vault secrets management, and OPA policy-as-code from scratch.',
     results: [
       { metric: '8 regions', label: 'Deployed simultaneously' },
@@ -179,8 +194,8 @@ export const caseStudies: CaseStudy[] = [
     ],
     quote: {
       text: 'Team analytics finally let us see who was ready for on-call rotation. We stopped guessing and started measuring.',
-      author: 'Sarah Lindstrom',
-      role: 'VP Engineering, Meridian Global',
+      author: 'VP Engineering',
+      role: 'Global Enterprise Software · US/EU',
     },
   },
 ];

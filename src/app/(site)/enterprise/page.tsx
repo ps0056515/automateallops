@@ -12,7 +12,7 @@ export default function EnterprisePage() {
       <PageHeader
         eyebrow="Enterprise"
         title="DevOps upskilling at org scale"
-        description="SSO, private lab VPCs, team analytics, custom paths, and dedicated support — live today, not on a roadmap. Meridian Global deployed 12,000 seats across 8 regions."
+        description="SSO, private lab VPCs, team analytics, custom paths, and dedicated support — live today, not on a roadmap. One global enterprise client deployed 12,000 seats across 8 regions."
         backHref="/"
       />
       <EnterpriseDetailView />

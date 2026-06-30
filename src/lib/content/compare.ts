@@ -41,6 +41,6 @@ export const positioningPoints = [
   },
   {
     title: 'Enterprise that ships today',
-    body: 'SSO, private labs, and team analytics are live — not roadmap items. Meridian Global rolled out 12,000 seats across 8 regions. See case studies for outcomes.',
+    body: 'SSO, private labs, and team analytics are live — not roadmap items. A global enterprise client rolled out 12,000 seats across 8 regions. See case studies for outcomes.',
   },
 ];

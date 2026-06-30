@@ -1,5 +1,5 @@
 'use client';
-import { clientLogos } from '@/lib/content/clients';
+import { clientLogos, anonymizationNote } from '@/lib/content/clients';
 
 const metrics = [
   { value: '200+', label: 'Projects delivered' },
@@ -43,6 +43,7 @@ export default function SocialProofMarquee() {
             </div>
           ))}
         </div>
+        <p className="text-[10px] text-slate-600 text-center pb-3 px-4">{anonymizationNote}</p>
       </div>
     </section>
   );

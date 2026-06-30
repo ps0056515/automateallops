@@ -90,10 +90,10 @@ export const enterpriseSections: RichSection[] = [
 ];
 
 export const enterpriseLogos = [
-  'Meridian Global',
-  'NovaPay',
-  'CloudStack',
+  'Global Enterprise Software',
+  'Series B Fintech',
+  'Mid-market B2B SaaS',
   'TechFlow Inc',
-  'DataBridge',
+  'Data Platform Co.',
   'SecureNet',
 ];

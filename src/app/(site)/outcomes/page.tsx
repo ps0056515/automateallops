@@ -1,36 +1,44 @@
 import Link from 'next/link';
 import PageHeader from '@/components/PageHeader';
-import { caseStudies, proofMetrics, certPassRates } from '@/lib/content/proof';
+import { caseStudies, outcomesPageMetrics, certPassRates } from '@/lib/content/proof';
+import { anonymizationNote } from '@/lib/content/clients';
 import { sections } from '@/lib/navigation';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Shield } from 'lucide-react';
 
 export const metadata = {
   title: 'Outcomes & Case Studies — AutomateAllOps',
-  description: 'Cert pass rates, job placements, and enterprise case studies — verified AutomateAllOps outcomes.',
+  description: 'Delivery outcomes, certification pass rates, and anonymized case studies from AutomateAllOps projects.',
 };
 
 export default function OutcomesPage() {
+  const featuredCerts = certPassRates.slice(0, 3);
+
   return (
     <>
       <PageHeader
         eyebrow="Proof"
         title="Outcomes you can verify"
-        description="We publish cert pass rates, placement data, and enterprise case studies — because claims without evidence are just marketing."
+        description="Published delivery metrics, cert pass rates, and case studies — not vanity stats."
         backHref="/"
       />
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-16">
-          {proofMetrics.map((m) => (
-            <div key={m.label} className="glass rounded-xl p-4 text-center border border-white/5" title={m.detail}>
-              <div className="text-2xl font-black gradient-text mb-1">{m.value}</div>
-              <div className="text-xs text-slate-400">{m.label}</div>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
+          {outcomesPageMetrics.map((m) => (
+            <div key={m.label} className="glass rounded-xl p-5 text-center border border-white/5" title={m.detail}>
+              <div className="text-2xl sm:text-3xl font-black gradient-text mb-1">{m.value}</div>
+              <div className="text-xs text-slate-400 leading-snug">{m.label}</div>
             </div>
           ))}
         </div>
 
-        <h2 className="text-2xl font-black text-white mb-6">Certification pass rates</h2>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-16">
-          {certPassRates.map((c) => (
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-6">
+          <h2 className="text-2xl font-black text-white">Certification pass rates</h2>
+          <Link href={sections.certifications} className="text-sm text-cyan-400 hover:text-cyan-300 font-semibold inline-flex items-center gap-1">
+            All cert tracks <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+        <div className="grid sm:grid-cols-3 gap-4 mb-16">
+          {featuredCerts.map((c) => (
             <Link
               key={c.slug}
               href={`/certifications/${c.slug}`}
@@ -43,7 +51,11 @@ export default function OutcomesPage() {
           ))}
         </div>
 
-        <h2 className="text-2xl font-black text-white mb-6">Case studies</h2>
+        <h2 className="text-2xl font-black text-white mb-2">Case studies</h2>
+        <div className="flex items-start gap-2 text-sm text-slate-500 mb-6 max-w-2xl">
+          <Shield className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+          {anonymizationNote}
+        </div>
         <div className="grid md:grid-cols-2 gap-6">
           {caseStudies.map((study) => (
             <Link
@@ -77,8 +89,8 @@ export default function OutcomesPage() {
         </div>
 
         <div className="text-center mt-12">
-          <Link href={sections.getStarted} className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-violet-600 text-white font-bold">
-            Start your track <ArrowRight className="w-5 h-5" />
+          <Link href={sections.contactProjects} className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-violet-600 text-white font-bold">
+            Book a discovery call <ArrowRight className="w-5 h-5" />
           </Link>
         </div>
       </div>

@@ -173,7 +173,7 @@ export default function BenchTour({ open, onClose }: BenchTourProps) {
                 </div>
                 <div>
                   <div className="text-white text-sm font-bold">Bench Tour</div>
-                  <div className="text-slate-500 text-[10px] font-mono">live simulation · 60 sec</div>
+                  <div className="text-slate-500 text-[10px] font-mono">simulated flow · not a real deploy</div>
                 </div>
               </div>
               <div className="flex items-center gap-3">
@@ -219,9 +219,12 @@ export default function BenchTour({ open, onClose }: BenchTourProps) {
                       Deploy a squad in{' '}
                       <span className="brand-highlight">60 seconds</span>
                     </h2>
-                    <p className="text-slate-400 max-w-md mx-auto mb-8 leading-relaxed">
+                    <p className="text-slate-400 max-w-md mx-auto mb-2 leading-relaxed">
                       Walk through how AutomateAllOps matches bench-trained engineers to your stack —
-                      no sales deck, just the deploy flow.
+                      this is a demo, not an actual deployment.
+                    </p>
+                    <p className="text-slate-600 text-xs max-w-sm mx-auto mb-8">
+                      Engineer profiles shown are real bench leads. Matching logic is illustrative.
                     </p>
                     <button
                       type="button"
@@ -400,8 +403,7 @@ export default function BenchTour({ open, onClose }: BenchTourProps) {
                       Squad ready to deploy
                     </h2>
                     <p className="text-slate-400 text-sm max-w-sm mx-auto mb-8">
-                      That&apos;s the full flow — from bench scan to engineers in your Slack.
-                      Ready to do it for real?
+                      That&apos;s the simulated flow. Ready to start a real project?
                     </p>
                     <div className="flex flex-col sm:flex-row gap-3 justify-center">
                       <a

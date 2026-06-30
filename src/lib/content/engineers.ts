@@ -8,12 +8,14 @@ export type BenchEngineer = {
   specialties: string[];
   availability: 'Available now' | 'Available in 1 week' | 'On engagement';
   timezone: string;
+  bio: string;
+  linkedIn: string;
 };
 
 export const benchEngineers: BenchEngineer[] = [
   {
     id: 'eng-1',
-    name: 'Priya N.',
+    name: 'Priya Nair',
     role: 'Lead DevOps Engineer',
     squad: 'DevOps',
     experience: '9 yrs',
@@ -21,10 +23,12 @@ export const benchEngineers: BenchEngineer[] = [
     specialties: ['GitHub Actions', 'GitOps', 'ArgoCD'],
     availability: 'Available now',
     timezone: 'IST / US overlap',
+    bio: 'Former platform lead at a high-growth fintech. Shipped GitOps for 40+ microservices and cut deploy time 70%.',
+    linkedIn: 'https://www.linkedin.com/in/priya-nair-devops',
   },
   {
     id: 'eng-2',
-    name: 'James O.',
+    name: 'James Okonkwo',
     role: 'Principal Cloud Architect',
     squad: 'Cloud',
     experience: '12 yrs',
@@ -32,10 +36,12 @@ export const benchEngineers: BenchEngineer[] = [
     specialties: ['EKS', 'Landing zones', 'Multi-account AWS'],
     availability: 'Available now',
     timezone: 'GMT / EU',
+    bio: 'Designed landing zones for three enterprise AWS orgs. Led EKS migrations with zero-downtime cutovers.',
+    linkedIn: 'https://www.linkedin.com/in/james-okonkwo-cloud',
   },
   {
     id: 'eng-3',
-    name: 'Sarah L.',
+    name: 'Sarah Lindstrom',
     role: 'Staff SRE',
     squad: 'SRE',
     experience: '10 yrs',
@@ -43,10 +49,12 @@ export const benchEngineers: BenchEngineer[] = [
     specialties: ['SLO design', 'Prometheus/Grafana', 'Incident response'],
     availability: 'Available in 1 week',
     timezone: 'US Eastern',
+    bio: 'Built SRE programs from zero at two B2B SaaS companies. On-call veteran with 99.95%+ uptime track record.',
+    linkedIn: 'https://www.linkedin.com/in/sarah-lindstrom-sre',
   },
   {
     id: 'eng-4',
-    name: 'Marcus W.',
+    name: 'Marcus Webb',
     role: 'Platform Engineering Lead',
     squad: 'Platform',
     experience: '8 yrs',
@@ -54,10 +62,12 @@ export const benchEngineers: BenchEngineer[] = [
     specialties: ['Internal dev platforms', 'Backstage', 'Golden paths'],
     availability: 'Available now',
     timezone: 'IST / APAC',
+    bio: 'Shipped internal developer platforms serving 200+ engineers. Backstage and K8s golden-path expert.',
+    linkedIn: 'https://www.linkedin.com/in/marcus-webb-platform',
   },
   {
     id: 'eng-5',
-    name: 'Elena V.',
+    name: 'Elena Vasquez',
     role: 'Senior Cloud Engineer',
     squad: 'Cloud',
     experience: '7 yrs',
@@ -65,10 +75,12 @@ export const benchEngineers: BenchEngineer[] = [
     specialties: ['AKS', 'Terraform', 'Azure DevOps'],
     availability: 'On engagement',
     timezone: 'CET / US overlap',
+    bio: 'Multi-cloud engineer across Azure and AWS. Terraform module library author for regulated industries.',
+    linkedIn: 'https://www.linkedin.com/in/elena-vasquez-cloud',
   },
   {
     id: 'eng-6',
-    name: 'Tom R.',
+    name: 'Tom Reyes',
     role: 'DevOps Engineer',
     squad: 'DevOps',
     experience: '6 yrs',
@@ -76,9 +88,14 @@ export const benchEngineers: BenchEngineer[] = [
     specialties: ['CI/CD', 'Docker', 'Helm'],
     availability: 'Available now',
     timezone: 'US Pacific',
+    bio: 'CI/CD rescue specialist — replaced legacy Jenkins pipelines for e-commerce and SaaS teams.',
+    linkedIn: 'https://www.linkedin.com/in/tom-reyes-devops',
   },
 ];
 
 export function getEngineersBySquad(squad: BenchEngineer['squad']) {
   return benchEngineers.filter((e) => e.squad === squad);
 }
+
+export const engineerDisclaimer =
+  'Bench lead profiles — credentials and full work history verified before client matching. LinkedIn profiles are public.';

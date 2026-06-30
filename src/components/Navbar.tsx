@@ -102,8 +102,8 @@ export default function Navbar() {
           <div className="flex items-center gap-2 shrink-0">
             <ThemeToggle />
             <div className="hidden xl:flex items-center gap-2">
-            <Link href={sections.signIn} className="text-sm text-slate-400 hover:text-white px-4 py-2 transition-colors">
-              Sign In
+            <Link href={sections.signIn} className="text-sm text-slate-400 hover:text-white px-3 py-2 transition-colors" title="Learning platform labs & cert prep">
+              Lab sign in
             </Link>
             <a
               href={sections.contactProjects}
@@ -186,7 +186,7 @@ export default function Navbar() {
                   onClick={closeMobile}
                   className="flex-1 text-center text-sm text-slate-300 py-2.5 rounded-lg border border-white/10"
                 >
-                  Sign In
+                  Lab sign in
                 </Link>
                 <a
                   href={sections.contactProjects}
